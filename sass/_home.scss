@@ -1,0 +1,31 @@
+// .app {
+//   background-image: radial-gradient(
+//     circle farthest-corner at 10% 20%,
+//     rgba(171, 102, 255, 1) 0%,
+//     rgba(116, 182, 247, 1) 90%
+//   );
+//   background-size: 400% 400%;
+//   background-repeat: no-repeat;
+//   min-height: 100vh;
+//   animation: 10s animation-background infinite ease;
+//   -webkit-animation: 10s animation-background infinite ease;
+// }
+
+// @keyframes animation-background {
+//   0% {
+//     background-position: 0 50%;
+//   }
+//   50% {
+//     background-position: 100% 50%;
+//   }
+//   100% {
+//     background-position: 0% 50%;
+//   }
+// }
+
+.app {
+  // background: #17202a;
+  background: #fefefe;
+  width: 100%;
+  height: 100%;
+}

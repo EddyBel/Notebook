@@ -1,0 +1,53 @@
+---
+title: "Servidor simple basico."
+description: "Como se hace un servidor con js, nodejs, y la libreria express."
+language: "NodeJs"
+---
+
+# Como hacer servidor con nodejs
+
+Crear un archivo pakage.json para iniciar con el comando.
+
+```bash
+npm init
+```
+
+Instalar la libreria de express con el comando.
+
+```bash
+npm install express --save
+```
+
+Crear el archivo de script llamado como guste, ejemplo **index.js**. En el se importara la libreria y se ejecutara.
+
+```js
+const express = require("express"); //Importar la libreria
+const app = express(); //Ejecutar la libreria
+```
+
+Especificar el archivo que se enviara con su funcion get.
+
+```js
+app.get("/", (req, res) => {
+  res.send("Hello World"); //Enviaremos un texto plano 'Hello World'
+});
+```
+
+Definir el puerto donde se ejecutara el servidor.
+
+```js
+app.listen(9090); //Escuchara en el puerto 9090
+```
+
+_Archivo completo index.js_
+
+```js
+const express = require("express"); //Importar la libreria
+const app = express(); //Ejecutar la libreria
+
+app.get("/", (req, res) => {
+  res.send("Hello World"); //Enviaremos un texto plano 'Hello World'
+});
+
+app.listen(9090); //Escuchara en el puerto 9090
+```
