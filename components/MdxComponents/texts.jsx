@@ -1,7 +1,7 @@
 import { Text, Heading } from "@chakra-ui/react";
 
 export function H1(props) {
-  return <Text fontSize="6xl">{props.children}</Text>;
+  return <Text className="text-center" fontSize="6xl">{props.children}</Text>;
 }
 export function H2(props) {
   return <Text fontSize="5xl">{props.children}</Text>;

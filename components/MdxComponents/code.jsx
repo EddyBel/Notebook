@@ -27,12 +27,14 @@ export function CODE(props) {
           } else {
             return (
               <div {...getLineProps({ line, key: i })} key={`line-${key}`}>
-                {line.map((token, key) => (
-                  <span
-                    {...getTokenProps({ token, key })}
-                    key={`span-${key}`}
-                  />
-                ))}
+                {line.map((token, key) => {
+                  return (
+                    <span
+                      {...getTokenProps({ token, key })}
+                      key={`span-${key}`}
+                    />
+                  );
+                })}
               </div>
             );
           }

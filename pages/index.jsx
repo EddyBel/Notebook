@@ -49,7 +49,7 @@ function Home(props) {
           {/* <!-- content - end --> */}
 
           {/* <!-- image - start --> */}
-          <div className="xl:w-5/12 h-48 lg:h-auto bg-gray-100 overflow-hidden shadow-lg rounded-lg">
+          <div className="img-main xl:w-5/12 h-48 lg:h-auto bg-gray-100 overflow-hidden shadow-lg rounded-lg">
             <img
               src="https://images.pexels.com/photos/6958506/pexels-photo-6958506.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               loading="lazy"
@@ -99,7 +99,7 @@ function Home(props) {
           </div>
         </div>
       </div>
-      <div className="w-full h-36"></div>
+      <div className="w-full h-8"></div>
     </div>
   );
 }
