@@ -6,7 +6,7 @@ let path;
 if (process.env.NODE_ENV === 'development') {
   path = ''
 } else {
-  path = '/EddyBel/Notebook'
+  path = '/Notebook'
 }
 
 const nextConfig = {
