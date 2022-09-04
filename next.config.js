@@ -1,13 +1,13 @@
 /** @type {import('next').NextConfig} */
 
-// Configuraciones
-const config = require("./config.json")
-
 // Definir la variable que contendra las rutas
 let path;
 
-// Verificar si se esta en desarrollo o produccion
-process.env.NODE_ENV === "development" ? path = '' : path = config.basePath
+if (process.env.NODE_ENV === 'development') {
+  path = ''
+} else {
+  path = '/Notebook'
+}
 
 const nextConfig = {
   reactStrictMode: true,
