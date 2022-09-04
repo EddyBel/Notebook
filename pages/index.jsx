@@ -53,14 +53,10 @@ function Home(props) {
             className="img-main xl:w-5/12 h-48 lg:h-auto bg-gray-100 overflow-hidden shadow-lg rounded-lg"
             id="container-img"
           >
-            <Image
+            <img
               src={imagenMain}
               alt="imagen_main"
-              objectFit="cover"
-              objectPosition="center"
-              width="100%"
-              height="100%"
-              layout="responsive"
+              className="w-full h-full object-cover object-center"
             />
           </div>
           {/* image - end */}
