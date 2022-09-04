@@ -5,6 +5,7 @@ import { H1, H2, H3, H4, H5, H6 } from "./texts";
 import { Paragraphs } from "./paragraphs";
 import { UL, LI } from "./list";
 import { IMG } from "./img";
+import { Links } from "./link";
 
 const MDXComponents = {
   h1: (props) => <H1 {...props} />,
@@ -14,6 +15,7 @@ const MDXComponents = {
   h5: (props) => <H5 {...props} />,
   h6: (props) => <H6 {...props} />,
   p: (props) => <Paragraphs {...props} />,
+  a: (props) => <Links {...props} />,
   ul: (props) => <UL {...props} />,
   li: (props) => <LI {...props} />,
   pre: (props) => <PRE {...props} />,

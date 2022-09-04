@@ -1,0 +1,187 @@
+---
+title: "Bases de docker"
+description: "Aprende que es docker, y sus comandos basicos"
+theme: "Docker"
+---
+
+# Conceptos basicos de Docker
+
+### Que es docker?
+
+Docker es una forma de empaquetar las aplicaciones con todas las dependencias que contenga, a este concepto se le conoce como _contenedor_. Generaremos
+un empaquetado que contenga tanto el codigo de la aplicacion, como las dependencias con sus versiones especificadas, incluyendo sus variables de entorno.
+La caracteristica mas relevante es que los contenedores son portables, permitiendo que se puedan compartir a los demas desarrolladores del equipo manteniendo exactamente las dependencias como deben estar, para el correcto funcionamiento de la aplicacion, permitiendo un despliegue y desarrollo de aplicacion mucho mas facil.
+
+Los contenedores se almacenan en un repositorio de contenedores, existen dos tipos de repositorio, el publico y privado.
+En los repositorios publicos el mas popular y principal plataforma es [Docker Hub](https://hub.docker.com/), donde encontraremos los contenedores mas utilizados.
+
+En lo que docker nos ayuda, es a evitar conflictos en el codigo devido a las diferentes versiones que cada desarrollador del equipo tenga de determinada herramienta o dependencia, manteniendo el mismo programa con sus mismos recursos para todas las maquinas donde este se ejecute.
+
+### Que es una image?
+
+Una imagen es el empaquetado que cuenta con el codigo desarrollado y las dependencias del codigo, haciendo facil su transporte.
+
+### Que es un container?
+
+Un container son grupos de imagenes organizadas en capas, donde la base es una imagen es una distribucion de linux (la mas utilizada es Alpine por lo lijera que esta es), hasta llegar a la capa que contiene el codigo de la aplicacion.
+
+### Conceptos de docker.
+
+Docker es una forma de virtualizacion, pero quitando lo pesado que pueden llegar a ser las maquinas virtuales estandar. Esto devido a que las maquinas virtuales virtualizan tanto el kernel como las aplicaciones que corren por encima de el. en el caso de Docker, solo virtualiza la capa de aplicaciones, asi aligerando bastante el tamaño del contenedor, y en el caso dek kernel se utiliza el kernel donde la aplicacion esta corriendo.
+
+### Primeros pasos.
+
+Lo primero es descargar e instalar [Docker Desktop](https://www.docker.com/)
+
+### Que es Docker Desktop?
+
+Docker Desktop es una maquina virtual que corre linux, y es la encargada de ejecutar los containers. Permite acceder al sistema de archivos y tener coneccion a la red tanto interna como externa.
+
+Docker Desktop incluye [Docker Compose](https://docs.docker.com/compose/), y [CLI](https://docs.docker.com/engine/reference/commandline/cli/) (command line interface)
+
+### Descargar una imagen.
+
+Dentro de la plataforma [Dockerhub](https://hub.docker.com/) se encontraran las imagenes mas populares y oficiales de cada herramienta, que prodremos descargar y utilizar para su uso. Para este ejemplo iremos a la imagen de [Nodejs](https://hub.docker.com/_/node) donde encontraremos a primera vista todas las imagenes de las diferentes versiones de nodejs.
+
+![Imagen de las versiones de node](https://i.postimg.cc/WpDrv0QG/imagenes-de-node-enlistadas.png)
+
+Asi como tambien el comando de descarga de dicha imagen.
+
+![Imagen de comando de descarga](https://i.postimg.cc/zfndSmfM/Dockerhub-comando-de-descarga.png)
+
+Para este ejemplo el comando seria el siguiente, al usar en el comando directamente node le estamos indicando que descargue la ultima imagen existente.
+
+```bash
+docker pull node
+```
+
+Durante la descarga veremos la palabra clabe como latest que indica que esta descargando la ultima version.
+![Descargando version latest](https://i.postimg.cc/XJg4PDs1/descargando-imagen-latest.png)
+
+Si queremos descargar una version en especifico habra que especificar a docker la version que queremos.
+
+```bash
+docker pull node:version
+```
+
+Ejemplo si queremos la version 16 de node usaremos
+
+```bash
+docker pull node:16
+```
+
+Ahora vemos como la descarga se hace con la version especificada.
+![Descargando version especifica](https://i.postimg.cc/G38HtbSb/descargando-node-version.png)
+
+Lo que Docker hace al descargar la imagen es descargar todas sus capas, esto lo que permite es que si ya se an descargado previamente las mismas capas, estas no se volveran a descargar, asi obtimizando el espacio.
+
+### Ver el enlistado de imagenes descargadas.
+
+Para poder ver las imagenes que tenemos descargadas, y si se descargaron correctamente usaremos el siguiente comando.
+
+```bash
+docker images
+```
+
+Veremos una tabla con la lista de imagenes descargadas y sus caracteristicas.
+![Lista de imagenes descargadas](https://i.postimg.cc/yNLzXSx2/mostrando-imagenes-descargadas.png)
+
+Podremos ver una tabla con los datos de dicha imagen.
+
+- REPOSITORY. Nos indica el nombre del repositorio en nuestro caso node.
+- TAG. Es la etiqueta de la version que hemos instalado.
+- IMAGE ID. Es el indentificador unico de la imagen.
+- CREATED. Indica la fecha de creacion de la imagen.
+- SIZE. Nos indica el tamaño de la imagen.
+
+Para poder eliminar alguna imagen el comando que ejecutariamos seria.
+
+```bash
+docker image rm nombre_de_la_imagen
+```
+
+Por ejemplo para eliminar la imagen de node 16 usaremos.
+
+```bash
+docker image rm node:16
+```
+
+![Eliminando imagen](https://i.postimg.cc/658T7tj9/eliminando-imagen-node-16.png)
+
+Volvemos a ejecutar _docker images_ para ver las imagenes que tenemos descargadas y notaremos que node 16 ya no se encuentra.
+![Mostrando nuevas imagenes](https://i.postimg.cc/wBqpmkqh/mostrando-imagenes-despues-de-eliminar-node-16.png)
+
+### Como crear un contenedor?
+
+Para poder crear un contenedor, lo primero que necesitaremos sera la imagen a utilizar. para este ejemplo usaremos node
+
+Escribiendo el siguiente comando podremos crear un contenedor.
+
+```bash
+docker create nombre_de_la_imagen_base
+```
+
+Para nuestro caso seria.
+
+```bash
+docker create node
+```
+
+Este comando nos retornaria un id, este id es la clave de nuestro contenedor que utilizaremos.
+![Contenedor creado](https://i.postimg.cc/Z5FmnQSb/creando-contenedor.png)
+
+Para poder ver todos nuestros contendores creados utilizaremos el siguiente comando.
+
+```bash
+docker ps -a
+```
+
+Nos mostrara una tabla con todos los contenedores creados en nuestro caso solo es 1.
+![Lista de contenedores creados](https://i.postimg.cc/s1CFDYHG/mostrando-todos-los-contenedores.png)
+
+La tabla cuenta con datos del contenedor estos significan.
+
+- CONTAINER ID. Este es el id con el que haremos referencia al contenedor.
+- IMAGE. Este es el nombre de la imagen base con la que fue creado.
+- COMMAND. Muestra el comando que utiliza el contenedor para ejecutarse.
+- CREATED. Muestra hace cuanto fue creado el contenedor.
+- STATUS. Muestra el estado de el contenedor si se encuentra activo o no.
+- PORTS. Muestra los puertos que utilizara para conectarse con otros programas.
+- NAMES. Muestra el nombre de el contenedor.
+
+Para poder eliminar un contenedor utilizaremos el siguiente comando.
+
+```bash
+docker rm id_del_contenedor
+```
+
+Para nuestro caso seria.
+
+```bash
+docker rm c1eed3187f05
+```
+
+Ahora cuando volvamos a ejecutar _docker ps -a_ veremos que el contenedor ya no se encuentra.
+![Eliminando contenedores](https://i.postimg.cc/qRYVWV8L/eliminando-contenedor.png)
+
+Estar referenciando siempre el id es engorroso, pero para ello tenemos la oportunidad de referenciar al contenedor con un nombre personalizado con el siguiente comando.
+
+```bash
+docker create --name nombre_del_contenedor nombre_de_la_imagen_base
+```
+
+En nuestro caso seria.
+
+```bash
+docker create --name server node
+```
+
+Al volver a ejecutar `docker ps -a` para ver los contenedores, notaremos que el contenedor en el apartado NAMES tendra el nombre que nosotros emos asignado.
+![Nuevo contenedor con nombre personalizado](https://i.postimg.cc/k4DPjXtG/nuevo-contenedor-con-nombre-personalizado.png)
+
+Ahora podemos ejecutar los comandos sin hacer referencia al id, si no al nombre del contenedor.
+Como el comando anterior para eliminar el contenedor, ahora podemos ejecutar.
+
+```bash
+docker rm server
+```

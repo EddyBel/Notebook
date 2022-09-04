@@ -9,22 +9,13 @@ import { UserProvider } from '../contexts/userContext'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
-      <Head>
-        <title>Notebook</title>
-        <meta name="description" content="Personal notebook as a programming student." />
-        <link rel="icon" href="icon.png" />
-      </Head>
-      <main className='app flex flex-col items-center'>
-        <ChakraProvider>
-          <UserProvider>
-            <Menu />
-            <Component {...pageProps} />
-            {/* <Footer /> */}
-          </UserProvider>
-        </ChakraProvider>
-      </main>
-    </>
+    <ChakraProvider>
+      <UserProvider>
+        <Menu />
+        <Component {...pageProps} />
+        {/* <Footer /> */}
+      </UserProvider>
+    </ChakraProvider>
   )
 }
 

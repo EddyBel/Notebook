@@ -1,0 +1,80 @@
+{
+  "user": "EddyBel",
+  "basePath": "/Notebook",
+  "imagenMain": "https://images.pexels.com/photos/6958506/pexels-photo-6958506.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "imagenBackground": "https://images.pexels.com/photos/9754/mountains-clouds-forest-fog.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "themes": [
+    {
+      "theme": "JavaScript",
+      "type": "Codigo",
+      "direccion": "Themes/JavaScript",
+      "background": "https://soyhorizonte.com/wp-content/uploads/2020/10/Javascript-by-SoyHorizonte.jpg"
+    },
+    {
+      "theme": "Python",
+      "type": "Codigo",
+      "direccion": "Themes/Python",
+      "background": "https://images.hdqwalls.com/wallpapers/python-logo-4k-i6.jpg"
+    },
+    {
+      "theme": "Docker",
+      "type": "Codigo",
+      "direccion": "Themes/Docker",
+      "background": "https://media.wired.com/photos/590965e876f462691f012f63/2:1/w_2500,c_limit/docker-wallpaper-black.jpg"
+    },
+    {
+      "theme": "C",
+      "type": "Codigo",
+      "direccion": "Themes/C",
+      "background": "https://thumbor.cdn.classpert.com/GoaQhOSbNZRxWXvR0nTyeKlQAM4=/768x0/https%3A%2F%2Fcdn.classpert.com%2Fuploads%2Fpost__lenguajes-de-programacion-mas-usados-c-4983aa9055b9ae95789f9b7f77587184.jpg"
+    },
+    {
+      "theme": "C#",
+      "type": "Codigo",
+      "direccion": "Themes/CS",
+      "background": "https://niixer.com/wp-content/uploads/2020/11/csharp-800x445.jpg"
+    },
+    {
+      "theme": "C++",
+      "type": "Codigo",
+      "direccion": "Themes/C++",
+      "background": "https://www.softzone.es/app/uploads-softzone.es/2022/03/programar-c.jpg"
+    },
+    {
+      "theme": "Linux",
+      "type": "Codigo",
+      "direccion": "Themes/Linux",
+      "background": "https://www.skinatech.com/portal/wp-content/uploads/2017/05/original.png"
+    },
+    {
+      "theme": "Inteligencia Artificial",
+      "type": "Codigo",
+      "direccion": "Themes/IA",
+      "background": "https://educacion30.b-cdn.net/wp-content/uploads/2020/10/Inteligencia-Artificial-en-positivo-soluciones-en-positivo-cambiar-mundo-IA-innovacion-1200x545_c-1090x545-1-978x545.jpg"
+    },
+    {
+      "theme": "Fisica",
+      "type": "Ciencias",
+      "direccion": "Themes/Fisica",
+      "background": "https://fondosmil.com/fondo/75988.jpg"
+    },
+    {
+      "theme": "Matematicas",
+      "type": "Ciencias",
+      "direccion": "Themes/Matematicas",
+      "background": "https://msutexas.edu/academics/scienceandmath/mathematics/_assets/images/mathematics_image.jpg"
+    },
+    {
+      "theme": "Quimica",
+      "type": "Ciencias",
+      "direccion": "Themes/Quimica",
+      "background": "https://conceptoabc.com/wp-content/uploads/2021/07/Quimica.jpg"
+    },
+    {
+      "theme": "Ingles",
+      "type": "Lenguaje",
+      "direccion": "Themes/Ingles",
+      "background": "https://conceptodefinicion.de/wp-content/uploads/2016/09/Ingl%C3%A9s.jpg"
+    }
+  ]
+}

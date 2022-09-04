@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState } from "react"
+import Image from "next/image"
 import {
   Drawer,
   DrawerBody,
@@ -8,10 +9,8 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import Link from "next/link";
-// components
 import { NavBar } from "./nav_bar";
 import { options_menu } from "../../options.config";
-// contexts
 import { useUser } from "../../contexts/userContext";
 
 export function Menu() {
@@ -19,6 +18,7 @@ export function Menu() {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [placement, setPlacement] = useState("left");
+
   return (
     <>
       <NavBar onClick={onOpen} />
@@ -29,7 +29,7 @@ export function Menu() {
             borderBottomWidth="1px"
             className="flex flex-row items-center justify-center gap-7"
           >
-            <img src={user.img} alt="" className="w-16 h-16 rounded-full" />
+            <Image src={user.img} alt="Imagen de usuario" width="60px" height="60px" objectFit="cover" className="rounded-full" />
             {user.name}
           </DrawerHeader>
           <DrawerBody>

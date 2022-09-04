@@ -7,16 +7,29 @@ export function CODE(props) {
   // Variables y constantes
   let count = 0;
   let key = 0;
+  let lang = "";
 
-  // Simplifica el nombre del lenguaje
-  const match = props.className.match(/language-([\0-\uFFFF]*)/);
+  // console.log(props);
+
+  if (
+    props.className === undefined ||
+    props.className === null ||
+    props.className === ""
+  ) {
+    lang = "none";
+  } else {
+    // Simplifica el nombre del lenguaje
+    const className = props.className;
+    const match = className.match(/language-([\0-\uFFFF]*)/);
+    lang = match[1];
+  }
 
   return (
     <Highlight
       {...defaultProps}
       theme={theme}
       code={props.children}
-      language={match[1]}
+      language={lang}
     >
       {({ tokens, getLineProps, getTokenProps }) =>
         tokens.map((line, i) => {

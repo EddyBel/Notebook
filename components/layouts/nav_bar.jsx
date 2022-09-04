@@ -8,7 +8,7 @@ export function NavBar({ onClick }) {
   const { user } = useUser();
 
   return (
-    <nav className="w-screen p-2 pl-8 pr-8 bg-gray-900 flex flex-row justify-between items-center fixed z-20">
+    <nav className="w-screen p-2 pl-8 pr-8 bg-gray-900 flex flex-row justify-between items-center z-20">
       <Button_Burguer onClick={onClick} />
       <div className="flex flex-row justify-center items-center gap-4">
         {/* <img src={user.img} className="w-10 h-10 rounded-full" alt="" />

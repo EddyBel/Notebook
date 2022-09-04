@@ -7,20 +7,20 @@ const options_menu = [
         direccion: '/'
     },
     {
-        title: 'Notas',
+        title: 'Temas',
         svg: <Folder />,
-        direccion: '/Notes'
+        direccion: '/Themes'
     },
     {
         title: 'Info',
         svg: <Data />,
-        direccion: '/Data'
+        direccion: '/Info'
     },
-    {
-        title: 'Report',
-        svg: <Report />,
-        direccion: '/Report'
-    },
+    // {
+    //     title: 'Report',
+    //     svg: <Report />,
+    //     direccion: '/Report'
+    // },
 ]
 
 const options_nav_bar = [{
