@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useUser } from "../contexts/userContext";
 import { Text } from "@chakra-ui/react";
 import { getAllFiles } from "../lib/mdx";
@@ -44,7 +43,7 @@ function Info({ totalFiles, numberFilesByTheme }) {
                 className="w-full flex flex-row justify-between items-center gap-12 mb-5"
                 key={stats.theme}
               >
-                <Text className="w-auto md:w-32 text-sm lg:text-xl">
+                <Text className="w-auto md:w-36 text-sm lg:text-xl">
                   {theme}
                 </Text>
                 <div className="bar-range w-full h-5 bg-gray-400 bg-opacity-60 rounded-lg overflow-hidden">

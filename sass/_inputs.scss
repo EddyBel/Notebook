@@ -1,0 +1,29 @@
+#input-search {
+  outline: none;
+  border: none;
+  background: none;
+  border: solid 1px transparent;
+
+  color: #eaecee;
+
+  &::placeholder {
+    color: #eaeceeb4;
+    font-family: "Raleway", sans-serif;
+  }
+
+  &:focus {
+    border: solid 1px #3498db;
+  }
+}
+
+#icon-search {
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+  }
+}

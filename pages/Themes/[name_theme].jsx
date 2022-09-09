@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getAllFilesMetadata, validateTheme} from "../../lib/mdx";
 import { language } from "../../lib/language";
 import { useRouter } from "next/router";
+import { matter } from 'gray-matter';
 
 const config = require("../../config.json");
 
@@ -35,7 +36,7 @@ function NameTheme(props) {
                         {note.title}
                       </h3>
                       <img
-                        src={language(note.theme).src}
+                        src={language(note.matter).src}
                         alt=""
                         className="w-8 h-8"
                       />
@@ -70,7 +71,7 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
   const paths = config.themes.map((theme) => {
-    const name = validateTheme(theme.theme)
+    const name = validateTheme(theme.materia)
     return {
       params: {
         name_theme: name,

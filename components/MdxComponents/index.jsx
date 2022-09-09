@@ -3,7 +3,7 @@ import { CODE } from "./code";
 import { Underlined, EM } from "./subR";
 import { H1, H2, H3, H4, H5, H6 } from "./texts";
 import { Paragraphs } from "./paragraphs";
-import { UL, LI } from "./list";
+import { UL, LI, OL } from "./list";
 import { IMG } from "./img";
 import { Links } from "./link";
 
@@ -17,6 +17,7 @@ const MDXComponents = {
   p: (props) => <Paragraphs {...props} />,
   a: (props) => <Links {...props} />,
   ul: (props) => <UL {...props} />,
+  ol: (props) => <OL {...props} />,
   li: (props) => <LI {...props} />,
   pre: (props) => <PRE {...props} />,
   code: (props) => <CODE {...props} />,

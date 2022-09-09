@@ -4,7 +4,7 @@ export function IMG(props) {
       src={props.src}
       loading="lazy"
       alt={props.alt}
-      className="w-full h-full object-cover object-center"
+      className="w-full h-full object-cover object-center rounded-lg"
     />
   );
 }

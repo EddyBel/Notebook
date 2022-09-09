@@ -25,7 +25,7 @@ function Themes() {
         <div className="grid lg:grid-cols-3 gap-8" id="container-themes">
           {/* Card-theme - start*/}
           {config.themes.map((theme) => {
-            return <CardTheme {...theme} key={theme.theme} />;
+            return <CardTheme {...theme} key={theme.materia} />;
           })}
           {/* Card-theme - end */}
         </div>

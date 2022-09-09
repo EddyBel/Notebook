@@ -16,10 +16,10 @@ export function CardTheme(props) {
         <div className="flex flex-col relative">
           <span className="text-gray-300">{props.type}</span>
           <span className="text-white text-lg lg:text-xl font-semibold">
-            {props.theme}
+            {props.materia}
           </span>
         </div>
-        <h1 style={{ display: "none" }}>{props.theme}</h1>
+        {/* <h1 style={{ display: "none" }}>{props.materia}</h1> */}
       </a>
     </Link>
   );

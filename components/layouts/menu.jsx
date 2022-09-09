@@ -1,5 +1,5 @@
-import { useState } from "react"
-import Image from "next/image"
+import { useState } from "react";
+import Image from "next/image";
 import {
   Drawer,
   DrawerBody,
@@ -29,7 +29,14 @@ export function Menu() {
             borderBottomWidth="1px"
             className="flex flex-row items-center justify-center gap-7"
           >
-            <Image src={user.img} alt="Imagen de usuario" width="60px" height="60px" objectFit="cover" className="rounded-full" />
+            <Image
+              src={user.img}
+              alt="Imagen de usuario"
+              width="60px"
+              height="60px"
+              objectFit="cover"
+              className="rounded-full"
+            />
             {user.name}
           </DrawerHeader>
           <DrawerBody>
@@ -39,6 +46,7 @@ export function Menu() {
                   <li
                     className="min-w-max"
                     key={`option_nav_bar_${option.title}`}
+                    onClick={onClose}
                   >
                     <Link href={option.direccion}>
                       <a

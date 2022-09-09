@@ -1,6 +1,6 @@
 {
   "name": "note-book",
-  "version": "1.1.0",
+  "version": "1.4.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,7 +9,7 @@
     "lint": "next lint",
     "export": "next export",
     "notes": "git clone https://github.com/EddyBel/NOTES.git",
-    "postinstall": "npm notes"
+    "postinstall": "npm run notes"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.9",
@@ -21,6 +21,11 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sass": "^1.54.4"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",
