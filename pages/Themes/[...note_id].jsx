@@ -8,10 +8,12 @@ function Notes({ source, frontmatter }) {
   const router = useRouter();
 
   return (
-    <div className="bg-white py-6 sm:py-8 lg:py-12 w-full">
+    <div className="bg-white py-6 sm:py-8 lg:py-12 w-full dark:bg-slate-900 duration-400">
+      <div className="h-14"></div>
       <div className="max-w-screen-md px-4 md:px-8 mx-auto p-14 flex flex-col gap-8">
         <MDXRemote {...source} components={components} />
       </div>
+      <div className="h-14"></div>
     </div>
   );
 }

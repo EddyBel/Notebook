@@ -1,18 +1,17 @@
 import { useUser } from "../contexts/userContext";
 import { Text } from "@chakra-ui/react";
 import { getAllFiles } from "../lib/mdx";
-
-const { imagenBackground, themes } = require("../config.json");
+import { params } from "../configs/index";
 
 function Info({ totalFiles, numberFilesByTheme }) {
   const { user } = useUser();
 
   return (
-    <div className="min-h-screen w-screen">
-      <div className="W-10/12 p-4 shadow-lg m-3 lg:m-24 lg:p-12">
-        <div className="w-full h-80 rounded-xl overflow-hidden">
+    <div className="min-h-screen w-screen dark:bg-slate-900 pt-14 pb-14">
+      <div className="W-10/12 dark:bg-slate-800 p-4 shadow-lg m-3 lg:m-24 lg:p-12 rounded-md mt-14">
+        <div className="w-full h-36 lg:h-80 rounded-xl overflow-hidden">
           <img
-            src={imagenBackground}
+            src={params.backgrounds[1]}
             alt="Imagen de fondo"
             className="w-full h-full object-cover object-center"
           />
@@ -21,11 +20,14 @@ function Info({ totalFiles, numberFilesByTheme }) {
           <img
             src={user.img}
             alt="imagen-user"
-            className="w-48 h-48 rounded-full -translate-y-28 "
+            className="w-28 h-28 lg:w-48 lg:h-48 rounded-full -translate-y-14 lg:-translate-y-28 "
           />
         </div>
         <div className="w-full h-auto p-2 lg:p-10">
-          <Text fontSize="6xl" className="text-center mb-10">
+          <Text
+            fontSize="6xl"
+            className="text-center mb-10 dark:text-slate-200"
+          >
             Estadistica
           </Text>
 
@@ -43,7 +45,7 @@ function Info({ totalFiles, numberFilesByTheme }) {
                 className="w-full flex flex-row justify-between items-center gap-12 mb-5"
                 key={stats.theme}
               >
-                <Text className="w-auto md:w-36 text-sm lg:text-xl">
+                <Text className="w-auto md:w-36 text-sm lg:text-xl dark:text-slate-200">
                   {theme}
                 </Text>
                 <div className="bar-range w-full h-5 bg-gray-400 bg-opacity-60 rounded-lg overflow-hidden">
@@ -53,7 +55,7 @@ function Info({ totalFiles, numberFilesByTheme }) {
                     style={{ width: `${percentage}%` }}
                   ></div>
                 </div>
-                <Text className="w-12 text-sm lg:text-xl">{`${Math.round(
+                <Text className="w-12 text-sm lg:text-xl dark:text-slate-200">{`${Math.round(
                   percentage
                 )}%`}</Text>
               </div>

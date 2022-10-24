@@ -1,22 +1,23 @@
 import Link from "next/link";
-import { getAllFilesMetadata, validateTheme} from "../../lib/mdx";
+import { CardNote } from "../../components/common/cards";
+import { getAllFilesMetadata, validateTheme } from "../../lib/mdx";
 import { language } from "../../lib/language";
 import { useRouter } from "next/router";
-import { matter } from 'gray-matter';
-
-const config = require("../../config.json");
+import { themes as THEME } from "../../configs/index";
+import { matter } from "gray-matter";
+const themes = THEME.themes;
 
 function NameTheme(props) {
   const route = useRouter();
 
   return (
-    <div className="bg-white py-6 sm:py-8 lg:py-12">
+    <div className="bg-white dark:bg-slate-900 py-6 sm:py-8 lg:py-12 min-h-screen">
       <div className="w-full h-10"></div>
       <div className="max-w-screen-xl px-4 md:px-8 mx-auto">
         {/* text - start */}
         <div className="mb-10 md:mb-16">
-          <h2 className="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">
-            Notas de estudio
+          <h2 className="text-gray-800 dark:text-slate-200 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">
+            Notas
           </h2>
         </div>
         {/* text - end */}
@@ -25,26 +26,15 @@ function NameTheme(props) {
         <div className="grid sm:grid-cols-2 gap-4 md:gap-8">
           {props.notes.map((note) => {
             return (
-              <Link
+              <CardNote
+                date={note.date}
+                title={note.title}
+                route={note.route}
+                matter={note.matter}
+                materia={route.query.name_theme}
                 href={`${route.query.name_theme}/${note.route}`}
-                key={`card-note-${note.route}`}
-              >
-                <a>
-                  <div className="bg-gray-100 rounded-lg p-5 shadow-xl hover:scale-105 duration-200 cursor-pointer">
-                    <div className="flex justify-between items-center border-b gap-4 pb-4 mb-4">
-                      <h3 className="text-indigo-500 sm:text-lg md:text-xl font-semibold">
-                        {note.title}
-                      </h3>
-                      <img
-                        src={language(note.matter).src}
-                        alt=""
-                        className="w-8 h-8"
-                      />
-                    </div>
-                    <p className="text-gray-500">{note.description}</p>
-                  </div>
-                </a>
-              </Link>
+                key={note.route}
+              />
             );
           })}
         </div>
@@ -70,8 +60,8 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const paths = config.themes.map((theme) => {
-    const name = validateTheme(theme.materia)
+  const paths = themes.map((theme) => {
+    const name = validateTheme(theme.materia);
     return {
       params: {
         name_theme: name,

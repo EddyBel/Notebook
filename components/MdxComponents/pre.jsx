@@ -1,4 +1,4 @@
-// TODO Agreagar la funcion de copiar capturar y exportar 
+// TODO Agreagar la funcion de copiar capturar y exportar
 
 import { languageString } from "../../lib/language";
 
@@ -13,23 +13,17 @@ export function PRE(props) {
       <pre className="bg-gray-900 p-1 rounded-xl w-full max-w-4xl m-auto shadow-2xl">
         <div className="w-full p-1 flex justify-between items-center pl-4 pr-4">
           <div className="flex flex-row justify-center items-center gap-2">
-            <div
-              className="w-4 h-4 bg-red-600 rounded-full cursor-pointer hover:bg-red-500 duration-200"
-              title="export"
-            ></div>
-            <div
-              className="w-4 h-4 bg-yellow-600 rounded-full cursor-pointer hover:bg-yellow-500 duration-200"
-              title="captura"
-            ></div>
-            <div
-              className="w-4 h-4 bg-green-600 rounded-full cursor-pointer hover:bg-green-500 duration-200"
-              title="copy"
-            ></div>
+            <div className="w-4 h-4 bg-red-600 rounded-full hover:bg-red-500 duration-200"></div>
+            <div className="w-4 h-4 bg-yellow-600 rounded-full hover:bg-yellow-500 duration-200"></div>
+            <div className="w-4 h-4 bg-green-600 rounded-full hover:bg-green-500 duration-200"></div>
           </div>
           {/* <h1 className="text-gray-50">main.js</h1> */}
           <h1 className="text-gray-50">{lang}</h1>
         </div>
-        <div className="p-4 w-full flex flex-col flex-wrap">
+        <div
+          className="p-4 w-full flex flex-col flex-wrap overflow-x-auto"
+          id="container-code"
+        >
           {props.children}
         </div>
       </pre>

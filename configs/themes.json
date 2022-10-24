@@ -1,10 +1,4 @@
 {
-  "user": "EddyBel",
-  "basePath": "/",
-  "imagenMain": "https://images.pexels.com/photos/6958506/pexels-photo-6958506.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "imagenBackground": "https://images.pexels.com/photos/9754/mountains-clouds-forest-fog.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "path_notes": "NOTES",
-  "extension_files": [".mdx", ".md"],
   "themes": [
     {
       "materia": "JavaScript",

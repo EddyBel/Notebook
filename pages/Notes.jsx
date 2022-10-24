@@ -4,8 +4,9 @@ import { Search2Icon } from "@chakra-ui/icons";
 import { getAllFiles, getAllFilesMetadataOfAllFolders } from "../lib/mdx";
 import { validateTheme, searchFile } from "../lib/utils";
 import { Notes } from "../components/layouts/notes";
+import { themes as THEMES } from "../configs/index";
 
-const { themes } = require("../config.json");
+const themes = THEMES.themes;
 
 function AllNotes(props) {
   const [notes, setNotes] = useState();
@@ -29,8 +30,8 @@ function AllNotes(props) {
   }, []);
 
   return (
-    <div className="bg-white py-6 sm:py-8 lg:py-12">
-      <div className="w-full h-10"></div>
+    <div className="bg-white dark:bg-slate-900 py-6 sm:py-8 lg:py-12">
+      <div className="w-full h-14"></div>
       <div className="max-w-screen-xl px-4 md:px-8 mx-auto">
         <div className="w-full p-3 rounded-lg mb-8 bg-gray-900 shadow-lg shadow-blue-300 flex flex-row justify-center items-center gap-6">
           <input
@@ -50,8 +51,10 @@ function AllNotes(props) {
         </div>
         <Tabs variant="soft-rounded" colorScheme="telegram">
           <TabList>
-            <div className="w-full p-2 bg-gray-100 flex flex-row flex-wrap gap-6 justify-center items-center rounded-xl shadow-xl">
-              <Tab>Todo</Tab>
+            <div className="w-full p-2 bg-gray-100 dark:bg-slate-900 flex flex-row flex-wrap gap-6 justify-center items-center rounded-xl shadow-xl">
+              <Tab>
+                <p>Todo</p>
+              </Tab>
               {themes.map((materia) => {
                 return (
                   <Tab key={`tab-menu-option-${materia.materia}`}>

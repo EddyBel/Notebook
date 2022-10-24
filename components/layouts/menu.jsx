@@ -10,7 +10,8 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { NavBar } from "./nav_bar";
-import { options_menu } from "../../options.config";
+// import { options_menu } from "../../options.config";
+import { MenuOptions } from "../../configs/index";
 import { useUser } from "../../contexts/userContext";
 
 export function Menu() {
@@ -27,7 +28,7 @@ export function Menu() {
         <DrawerContent>
           <DrawerHeader
             borderBottomWidth="1px"
-            className="flex flex-row items-center justify-center gap-7"
+            className="flex flex-row items-center justify-center gap-7 dark:bg-slate-900"
           >
             <Image
               src={user.img}
@@ -37,11 +38,11 @@ export function Menu() {
               objectFit="cover"
               className="rounded-full"
             />
-            {user.name}
+            <h1 className="dark:text-slate-200">{user.name}</h1>
           </DrawerHeader>
-          <DrawerBody>
+          <DrawerBody className="dark:bg-slate-900">
             <ul>
-              {options_menu.map((option) => {
+              {MenuOptions.map((option) => {
                 return (
                   <li
                     className="min-w-max"
@@ -51,10 +52,10 @@ export function Menu() {
                     <Link href={option.direccion}>
                       <a
                         aria-label="dashboard"
-                        className="relative flex items-center px-4 py-3 space-x-4 hover:bg-gradient-to-r hover:from-sky-600 hover:to-cyan-400 hover:text-white duration-200"
+                        className="relative flex items-center px-4 py-3 space-x-4 hover:bg-gradient-to-r hover:from-sky-600 hover:to-cyan-400 hover:text-white duration-200 rounded-full"
                       >
                         {option.svg}
-                        <span className="-mr-1 font-medium">
+                        <span className="-mr-1 font-medium dark:text-slate-200">
                           {option.title}
                         </span>
                       </a>

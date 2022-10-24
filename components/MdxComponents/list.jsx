@@ -9,5 +9,5 @@ export function OL(props) {
 }
 
 export function LI(props) {
-  return <ListItem>{props.children}</ListItem>;
+  return <ListItem className="dark:text-slate-300">{props.children}</ListItem>;
 }
