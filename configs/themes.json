@@ -7,16 +7,24 @@
       "background": "https://soyhorizonte.com/wp-content/uploads/2020/10/Javascript-by-SoyHorizonte.jpg"
     },
     {
-      "materia": "Python",
-      "type": "Codigo",
-      "direccion": "Themes/Python",
-      "background": "https://images.hdqwalls.com/wallpapers/python-logo-4k-i6.jpg"
-    },
-    {
       "materia": "Docker",
       "type": "Codigo",
       "direccion": "Themes/Docker",
       "background": "https://media.wired.com/photos/590965e876f462691f012f63/2:1/w_2500,c_limit/docker-wallpaper-black.jpg"
+    },
+    {
+      "materia": "Programacion",
+      "type": "Codigo",
+      "direccion": "Themes/Programacion",
+      "background": "https://www.adslzone.net/app/uploads-adslzone.net/2021/10/lenguaje-de-programacion.jpg"
+    }
+  ],
+  "pendingThemes": [
+    {
+      "materia": "Python",
+      "type": "Codigo",
+      "direccion": "Themes/Python",
+      "background": "https://images.hdqwalls.com/wallpapers/python-logo-4k-i6.jpg"
     },
     {
       "materia": "C",
@@ -47,12 +55,6 @@
       "type": "Codigo",
       "direccion": "Themes/IA",
       "background": "https://educacion30.b-cdn.net/wp-content/uploads/2020/10/Inteligencia-Artificial-en-positivo-soluciones-en-positivo-cambiar-mundo-IA-innovacion-1200x545_c-1090x545-1-978x545.jpg"
-    },
-    {
-      "materia": "Programacion",
-      "type": "Codigo",
-      "direccion": "Themes/Programacion",
-      "background": "https://www.adslzone.net/app/uploads-adslzone.net/2021/10/lenguaje-de-programacion.jpg"
     },
     {
       "materia": "Fisica",

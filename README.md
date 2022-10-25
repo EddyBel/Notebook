@@ -8,15 +8,29 @@ The project is about a website where I can store and display my notes in an easy
 
 # View Proyect
 
-![Capture1º](./assets/covers/capture1.png)
+#### Light
+
+![Capture1º](./assets/covers/CaptureLight5.png)
 
 ---
 
-![Capture2º](./assets/covers/capture2.png)
+![Capture2º](./assets/covers/CaptureLight1.png)
 
 ---
 
-![Capture3º](./assets/covers/capture3.png)
+![Capture3º](./assets/covers/CaptureLight3.png)
+
+#### Dark
+
+![Capture1º](./assets/covers/CaptureDark5.png)
+
+---
+
+![Capture2º](./assets/covers/CaptureDark1.png)
+
+---
+
+![Capture3º](./assets/covers/CaptureDark3.png)
 
 # Technologies
 

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { language } from "../../lib/language";
+import { languageIcon } from "../../utils/index";
 
 export function CardTheme(props) {
   return (
@@ -42,7 +42,7 @@ export function CardNote({
             <h3 className="text-indigo-500 dark:text-blue-300 sm:text-lg md:text-xl font-semibold">
               {title}
             </h3>
-            <img src={language(matter).src} alt="" className="w-8 h-8" />
+            <img src={languageIcon(matter).src} alt="" className="w-8 h-8" />
           </div>
           <p className="text-gray-500 dark:text-white">{date}</p>
         </div>

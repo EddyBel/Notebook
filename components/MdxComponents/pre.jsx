@@ -1,6 +1,5 @@
 // TODO Agreagar la funcion de copiar capturar y exportar
-
-import { languageString } from "../../lib/language";
+import { languageString } from "../../utils/index";
 
 export function PRE(props) {
   // console.log(props);

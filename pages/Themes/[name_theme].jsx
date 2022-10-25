@@ -1,10 +1,9 @@
-import Link from "next/link";
 import { CardNote } from "../../components/common/cards";
-import { getAllFilesMetadata, validateTheme } from "../../lib/mdx";
-import { language } from "../../lib/language";
+import { getAllFilesMetadata } from "../../lib/mdx";
+import { FormatMatter } from "../../utils/index";
 import { useRouter } from "next/router";
 import { themes as THEME } from "../../configs/index";
-import { matter } from "gray-matter";
+
 const themes = THEME.themes;
 
 function NameTheme(props) {
@@ -61,7 +60,7 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
   const paths = themes.map((theme) => {
-    const name = validateTheme(theme.materia);
+    const name = FormatMatter(theme.materia);
     return {
       params: {
         name_theme: name,

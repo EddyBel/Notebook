@@ -46,7 +46,7 @@ function Home(props) {
 
           {/* image - start */}
           <div
-            className="img-main xl:w-5/12 h-48 lg:h-auto bg-gray-100 overflow-hidden shadow-lg rounded-lg lg:mt-14"
+            className="img-main xl:w-5/12 h-80 lg:h-auto bg-gray-100 overflow-hidden shadow-lg rounded-lg lg:mt-14"
             id="container-img"
           >
             <img

@@ -1,105 +1,64 @@
 import { useState, useEffect } from "react";
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
-import { Search2Icon } from "@chakra-ui/icons";
+import { Tabs } from "@chakra-ui/react";
 import { getAllFiles, getAllFilesMetadataOfAllFolders } from "../lib/mdx";
-import { validateTheme, searchFile } from "../lib/utils";
-import { Notes } from "../components/layouts/notes";
+import { searchFile, reorderTheNotes } from "../utils/index";
+import { Search } from "../components/layouts/search";
+import { Options, Panels } from "../components/pages/notes/index";
 import { themes as THEMES } from "../configs/index";
 
 const themes = THEMES.themes;
 
-function AllNotes(props) {
-  const [notes, setNotes] = useState();
+function AllNotes({ meta }) {
+  const [notes, setNotes] = useState(); // Estado de las notas
 
+  // Funcion que se actualiza cada que ocurre un cambio
   const changeHandleSearch = (event) => {
-    const value = event.target.value;
+    const value = event.target.value; // Obtener el valor del input que sera pasado como parametro
+
+    // Validar que el input no este vacio
+    // Si el input esta vacio regresar todos los datos completos
+    // Si no lo esta filtrar por el parametro pasado
     if (value != "" || value != null || value != undefined) {
-      const newNotes = searchFile(
-        rearrangeTheData(props.meta),
-        value,
-        setNotes
-      );
+      searchFile(reorderTheNotes(meta), value, setNotes);
     } else {
-      setNotes(rearrangeTheData(props.meta));
+      setNotes(reorderTheNotes(meta));
     }
   };
 
+  // Una vez renderizado el componente reordenar los datos y pasarselos al estado
   useEffect(() => {
-    const data = rearrangeTheData(props.meta);
+    const data = reorderTheNotes(meta);
     setNotes(data);
   }, []);
 
   return (
     <div className="bg-white dark:bg-slate-900 py-6 sm:py-8 lg:py-12">
-      <div className="w-full h-14"></div>
+      <div className="w-full h-14"></div> {/* Separador de la pagina */}
       <div className="max-w-screen-xl px-4 md:px-8 mx-auto">
-        <div className="w-full p-3 rounded-lg mb-8 bg-gray-900 shadow-lg shadow-blue-300 flex flex-row justify-center items-center gap-6">
-          <input
-            type="text"
-            className="w-full p-2 pl-4 rounded-lg ml-2 duration-200"
-            placeholder="Nombre de la nota 📄"
-            onChange={changeHandleSearch}
-            id="input-search"
-          />
-          <Search2Icon
-            width="30px"
-            height="30px"
-            color="#3498DB"
-            className="duration-200"
-            id="icon-search"
-          />
-        </div>
+        {/* Input se busqueda */}
+        <Search key="search-input" onChangeFunction={changeHandleSearch} />
+        {/* Fin del input de busqueda */}
+        {/* Panel por opcion */}
         <Tabs variant="soft-rounded" colorScheme="telegram">
-          <TabList>
-            <div className="w-full p-2 bg-gray-100 dark:bg-slate-900 flex flex-row flex-wrap gap-6 justify-center items-center rounded-xl shadow-xl">
-              <Tab>
-                <p>Todo</p>
-              </Tab>
-              {themes.map((materia) => {
-                return (
-                  <Tab key={`tab-menu-option-${materia.materia}`}>
-                    {materia.materia}
-                  </Tab>
-                );
-              })}
-            </div>
-          </TabList>
-          <TabPanels>
-            <TabPanel>
-              <Notes notes={notes} materia="todo" />
-            </TabPanel>
-            {themes.map((materia) => {
-              return (
-                <TabPanel key={`tabPanel-${materia.materia}`}>
-                  <Notes notes={notes} materia={materia.materia} />
-                </TabPanel>
-              );
-            })}
-          </TabPanels>
+          {/* Lista de opciones */}
+          <Options key={"tab-options-for-panel"} themes={themes} />
+          {/* Fin de la lista de opciones */}
+          {/* Lista de paneles */}
+          <Panels key="panels-of-options" notes={notes} themes={themes} />
+          {/* Fin de la lista de paneles */}
         </Tabs>
+        {/* Fin del panel por opcion */}
       </div>
-      <div className="w-full h-56"></div>
+      <div className="w-full h-56"></div> {/* Separador de pagina */}
     </div>
   );
 }
 
 export default AllNotes;
 
-function rearrangeTheData(data) {
-  const newData = [];
-
-  data.map((materia) => {
-    materia.map((note) => {
-      newData.push(note);
-    });
-  });
-
-  return newData;
-}
-
 export function getStaticProps() {
-  const files = getAllFiles();
-  const meta = getAllFilesMetadataOfAllFolders();
+  const files = getAllFiles(); // Obtener todas las notas
+  const meta = getAllFilesMetadataOfAllFolders(); // Obtener todos los metadatos
 
   return {
     props: {

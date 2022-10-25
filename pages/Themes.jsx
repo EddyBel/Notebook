@@ -14,11 +14,10 @@ function Themes() {
             </h1>
 
             <p className="max-w-screen-md text-gray-500 dark:text-slate-300 md:text-lg text-center mx-auto">
-              La separacion de temas de estudio de programacion. La programación
-              tiene muchos temas diferentes para estudiar. Aprender programación
-              puede ser difícil, pero separar los temas de estudio puede ayudar.
-              Si se dedica tiempo a la programación, aprender los conceptos
-              básicos puede ser más fácil.
+              La programación tiene muchos temas diferentes para estudiar.
+              Aprender programación puede ser difícil, pero separar los temas de
+              estudio puede ayudar. Si se dedica tiempo a la programación,
+              aprender los conceptos básicos puede ser más fácil.
             </p>
           </div>
           {/* text - end */}

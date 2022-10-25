@@ -1,13 +1,9 @@
-import Link from "next/link";
 import { CardNote } from "../common/cards";
-import { Spinner, Stack } from "@chakra-ui/react";
-import { language } from "../../lib/language";
-import { validateTheme } from "../../lib/utils";
+import { Spinner } from "@chakra-ui/react";
+import { FormatMatter } from "../../utils/index";
 
 export function Notes({ notes, materia }) {
-  const newMateria = validateTheme(materia);
-
-  // notes = undefined
+  const newMateria = FormatMatter(materia);
 
   return (
     <div className="grid sm:grid-cols-2 gap-6 md:gap-8 pt-10">
@@ -17,31 +13,17 @@ export function Notes({ notes, materia }) {
         </div>
       ) : (
         notes.map((note) => {
-          if (note.materia === newMateria) {
-            return (
-              <CardNote
-                date={note.date}
-                title={note.title}
-                route={note.route}
-                matter={note.matter}
-                materia={note.materia}
-                href={`Themes/${note.materia}/${note.route}`}
-                key={note.route}
-              />
-            );
-          } else if (materia === "todo") {
-            return (
-              <CardNote
-                date={note.date}
-                title={note.title}
-                route={note.route}
-                matter={note.matter}
-                materia={note.materia}
-                href={`Themes/${note.materia}/${note.route}`}
-                key={note.route}
-              />
-            );
-          }
+          return (
+            <CardNote
+              date={note.date}
+              title={note.title}
+              route={note.route}
+              matter={note.matter}
+              materia={note.materia}
+              href={`Themes/${note.materia}/${note.route}`}
+              key={note.route}
+            />
+          );
         })
       )}
     </div>

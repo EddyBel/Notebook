@@ -21,6 +21,9 @@ module.exports = {
     "./components/layouts/menu.jsx",
     "./components/layouts/nav_bar.jsx",
     "./components/layouts/notes.jsx",
+    "./components/layouts/search.jsx",
+    "./components/pages/notes/options.jsx",
+    "./components/pages/notes/panels.jsx",
   ],
   theme: {
     extend: {},

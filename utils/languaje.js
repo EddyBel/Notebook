@@ -14,7 +14,7 @@ import Math from "../assets/icons/funcion.png";
 import Ingles from "../assets/icons/ingles.png";
 import Coding from "../assets/icons/coding2.svg";
 
-export function language(language) {
+export const languageIcon = (language) => {
   if (language === "JS" || language === "js" || language === "JavaScript")
     return JavaScript;
   else if (language === "TS" || language === "ts" || language === "TypeScript")
@@ -67,13 +67,13 @@ export function language(language) {
   )
     return Coding;
   else return Document;
-}
+};
 
-export function languageString(string) {
+export const languageString = (string) => {
   if (string === "js") return "JavaScript";
   else if (string === "python") return " Python";
   else if (string === "json") return "JSON";
   else if (string === "cp") return "C+";
   else if (string === "bash") return "Bash";
   else return "Documento";
-}
+};
