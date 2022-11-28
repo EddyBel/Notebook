@@ -1,0 +1,39 @@
+@mixin flex(
+  $direccion-value: row,
+  $justify-value: flex-start,
+  $items-value: flex-start,
+  $gap-value: 0px,
+  $wrap-value: nowrap
+) {
+  display: flex;
+  flex-direction: $direccion-value;
+  justify-content: $justify-value;
+  align-items: $items-value;
+  gap: $gap-value;
+  flex-wrap: $wrap-value;
+}
+
+@mixin min-size($min-width-value: auto, $min-height-value: auto) {
+  min-width: $min-width-value;
+  min-height: $min-height-value;
+}
+
+@mixin max-size($max-width-value: auto, $max-height-value: auto) {
+  max-width: $max-width-value;
+  max-height: $max-height-value;
+}
+
+@mixin p-vertical($top-value: auto, $bottom-value: auto) {
+  padding-top: $top-value;
+  padding-bottom: $bottom-value;
+}
+
+@mixin p-horizontal($left-value: auto, $right-value: auto) {
+  padding-left: $left-value;
+  padding-right: $right-value;
+}
+
+@mixin size($width-value: auto, $height-value: auto) {
+  width: $width-value;
+  height: $height-value;
+}

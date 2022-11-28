@@ -39,7 +39,5 @@ next-env.d.ts
 /.github/
 
 # Repositorio de notas
-/NOTES/
 /NOTES
-/notes/
 /notes

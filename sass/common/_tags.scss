@@ -1,0 +1,44 @@
+.tag {
+  padding: 2px;
+  @include p-horizontal(6px, 6px);
+  min-width: 70px;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 16px;
+
+  &.one {
+    background: #d3f8e2;
+  }
+
+  &.two {
+    background: #e4c1f9;
+  }
+
+  &.tree {
+    background: #a9def9;
+  }
+
+  &.four {
+    background: #ffc1de;
+  }
+
+  &.five {
+    background: #c2bbcd;
+  }
+
+  &.six {
+    background: #c2bbcd;
+  }
+
+  &.seven {
+    background: #f5a69f;
+  }
+
+  &.nine {
+    background: #cedccf;
+  }
+
+  &.ten {
+    background: #ffe5c4;
+  }
+}

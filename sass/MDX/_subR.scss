@@ -1,0 +1,7 @@
+@import "../utils/mixin";
+
+.subR-text {
+  @include p-horizontal(5px, 5px);
+  background: #85e6c0;
+  border-radius: 30px;
+}

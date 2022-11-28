@@ -1,0 +1,52 @@
+@import "../utils/mixin";
+
+.container-card-theme {
+  @include size(100%, 200px);
+  @include flex(row, space-between, center, 20px);
+  @include p-horizontal(30px, 30px);
+  background: linear-gradient(to left bottom, #e1edd1, #dfdfeb);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 400ms;
+
+  @media (max-width: 664px) {
+    @include flex(row, center, center, 0px);
+    // @include p-horizontal(5px, 5px);
+  }
+
+  &:hover {
+    transform: translateY(-10px);
+  }
+
+  .img-background {
+    @include size(200px, 120px);
+    border-radius: 30px;
+    object-fit: cover;
+    object-position: center;
+    transition: all 300ms;
+
+    @media (max-width: 664px) {
+      display: none;
+    }
+  }
+
+  .container-text {
+    @include flex(column, center, flex-start, 10px);
+    @include size(100%, 100%);
+    // background: blue;
+
+    @media (max-width: 664px) {
+      @include flex(column, center, center, 0px);
+      // @include p-horizontal(5px, 5px);
+    }
+
+    .type {
+      font-size: 20px;
+    }
+
+    .matter {
+      font-size: 60px;
+      margin-left: 10px;
+    }
+  }
+}

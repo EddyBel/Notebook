@@ -1,59 +1,57 @@
 import { useEffect } from "react";
-import { NavBarOptions } from "../../configs/index";
 import { Button_Burguer } from "../common/buttons";
-import { useUser } from "../../contexts/userContext";
-import { currentDate } from "../../utils/index";
+import { Github } from "../../components/common/svg";
 
-export function NavBar({ onClick }) {
-  const { user } = useUser();
-
+export function NavBar() {
   useEffect(() => {
     watchAndHiddenNavBar();
   }, []);
 
+  /**
+   * Validates if the window scroll is up or down and if it is up it shows the navigation bar and if it is down it hides it.
+   */
+  const watchAndHiddenNavBar = () => {
+    /** Element navigation bar */
+    const navbar = document.getElementById("navbar-container");
+    /** Catch the scroll event of the window. */
+    let referencePosition = 0;
+
+    // Catch the scroll event of the window.
+    // Then get the current position.
+    // Compares the current position with the variable designated as reference.
+    // And if the current position is larger than the reference then it is going up, if not it is going down.
+    // Do the corresponding operation for each step.
+    // At the end it updates the reference value, with the value of the current scroll.
+    window.addEventListener("scroll", () => {
+      let actualPosition = document.body.getBoundingClientRect().top;
+
+      if (actualPosition > referencePosition) navigationStyles(navbar, 0, 100);
+      else navigationStyles(navbar, -120, 0);
+
+      referencePosition = actualPosition;
+    });
+  };
+
+  /**
+   * Modify the navigation bar.
+   * @param {Element} navbarElement Element of the dom that contains the navigation.
+   */
+  const navigationStyles = (navbarElement, translate = 0, opacity = 0) => {
+    navbarElement.style.transform = `translateY(${translate}%)`;
+    navbarElement.style.opacity = opacity;
+  };
+
   return (
-    <nav
-      className="w-11/12 p-2 pl-8 pr-8 bg-gradient-to-r from-slate-800 to-violet-900 flex flex-row justify-between items-center z-20 fixed left-0 right-0 m-auto mt-2 rounded-full shadow-xl duration-300"
-      id="navbar-container"
-    >
-      <Button_Burguer onClick={onClick} />
-      <div className="flex flex-row justify-center items-center gap-4">
-        <h1 className="text-gray-100 text-sm lg:text-lg">{currentDate()}</h1>
+    <nav className="Navbar" id="navbar-container">
+      <div className="container-button-obtions">
+        <Button_Burguer />
+        <h1 className="title-page">NoteBook</h1>
       </div>
-      <div className="flex flex-row justify-center items-center">
-        <ul>
-          {NavBarOptions.map((option) => {
-            return (
-              <li key={`options-nav-bar-${option.title}`}>
-                <a href={option.direccion}>{option.svg}</a>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+
+      <a href="https://github.com/EddyBel" className="direction-github">
+        <Github classN={"icon-github"} key="icon-github-key" />
+        <h3 className="name-github">Github</h3>
+      </a>
     </nav>
   );
 }
-
-// Esconde la navbar si el scroll es hacia abajo y muestralo si es hacia arriba
-const watchAndHiddenNavBar = () => {
-  const navbar = document.getElementById("navbar-container");
-
-  let scrollPos = 0;
-
-  // Saber si el scroll es hacia arriba o hacia abajo
-  window.addEventListener("scroll", () => {
-    const positionDOM = document.body.getBoundingClientRect().top; // Posicion actual
-
-    // Compara la posicion actual con la variable de posicion de scroll
-    if (positionDOM > scrollPos) {
-      navbar.style.transform = "translateY(0%)";
-      navbar.style.opacity = 100;
-    } else {
-      navbar.style.transform = "translateY(-120%)";
-      navbar.style.opacity = 0;
-    }
-    // Actualiza la posicion de scroll
-    scrollPos = document.body.getBoundingClientRect().top;
-  });
-};

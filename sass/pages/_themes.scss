@@ -1,0 +1,40 @@
+@import "../utils/mixin";
+
+.THEMES {
+  @include size(100%, 100%);
+  @include p-vertical(100px, 100px);
+  background: #fefeff;
+
+  .container-themes {
+    @include size(100%, auto);
+    @include min-size(auto, 100vh);
+    @include max-size(900px, auto);
+    background: linear-gradient(to right bottom, #dfdfeb, #a7b1d4);
+    margin: auto;
+    border-radius: 30px;
+    padding: 10px;
+    @include p-vertical(auto, 50px);
+
+    .container-texts {
+      padding: 30px;
+
+      .title {
+        font-size: 60px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .description {
+        @include max-size(700px, auto);
+        margin: auto;
+        text-align: justify;
+        font-size: 15px;
+      }
+    }
+
+    .container-list-themes {
+      @include flex(column, flex-start, center, 40px, wrap);
+      @include p-horizontal(10px, 10px);
+    }
+  }
+}

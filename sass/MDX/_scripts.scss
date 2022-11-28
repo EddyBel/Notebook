@@ -1,0 +1,65 @@
+@import "../utils/mixin";
+
+.section-code {
+  background: rgb(15 23 42);
+  border-radius: 30px;
+  margin: auto;
+  overflow: hidden;
+  // max-width: 800px;
+  width: 100%;
+  box-shadow: 0px 5px 15px rgba($color: #000000, $alpha: 0.5);
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 10px;
+
+  .head-code {
+    @include flex(row, space-between, center, 10px);
+    @include p-horizontal(20px, 20px);
+    @include p-vertical(5px, 5px);
+    width: 100%;
+
+    .container-decoration {
+      @include flex(row, center, center, 10px);
+
+      .decoration-check {
+        background: rgb(22 163 74);
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+      }
+      .decoration-max {
+        background: rgb(202 138 4);
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+      }
+      .decoration-delete {
+        background: rgb(220 38 38);
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    .text-lang {
+      font-size: 17px;
+      color: #fefefe;
+    }
+  }
+
+  .container-code {
+    @include flex(column, center, flex-start, 5px);
+    @include p-horizontal(20px, 20px);
+    @include p-vertical(20px, 20px);
+    overflow-x: auto;
+    font-size: 17px;
+
+    &::-webkit-scrollbar {
+      background: rgb(15 23 42);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #cde0bf;
+    }
+  }
+}

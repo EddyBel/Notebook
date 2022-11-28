@@ -1,0 +1,94 @@
+@import "../utils/mixin";
+
+.Navbar {
+  @include size(100%);
+  @include flex(row, space-between, center);
+  @include p-horizontal(15px, 15px);
+  @include p-vertical(10px, 10px);
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  backdrop-filter: blur(5px);
+  background: #ffffff3b;
+  transition: all 300ms;
+  z-index: 100;
+
+  .container-button-obtions {
+    @include flex(row, center, center, 10px);
+
+    .title-page {
+      font-size: 22px;
+      font-weight: bold;
+    }
+  }
+
+  .title-navbar {
+    color: black;
+  }
+}
+
+.button-burguer {
+  @include size(30px, 30px);
+  @include flex(column, center, flex-start, 7px);
+
+  .rect-burguer {
+    @include size(100%, 3px);
+    background: black;
+    border-radius: 5px;
+    transform-origin: left;
+    transition: all 400ms;
+
+    &.two {
+      @include size(50%, 3px);
+    }
+  }
+
+  &:hover {
+    .rect-burguer {
+      &.one {
+        transform: rotate(45deg);
+      }
+
+      &.two {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+
+      &.tree {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+.direction-github {
+  @include flex(row, center, center, 10px);
+  @include p-horizontal(13px, 13px);
+  @include p-vertical(5px, 5px);
+  border: 2px solid #000;
+  border-radius: 30px;
+  transition: all 600ms;
+
+  .icon-github {
+    @include size(20px, 20px);
+    fill: #0d0210;
+  }
+
+  .name-github {
+    font-weight: bold;
+  }
+
+  &:hover {
+    background: #0d0210;
+    border: solid 2px #e1edd1;
+
+    .icon-github {
+      fill: #e1edd1;
+    }
+
+    .name-github {
+      color: #e1edd1;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-align: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+#__next {
+  min-height: 100vh;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  height: 100vh;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background: #f3f3ec;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "Roboto", sans-serif;
+}
+
+.APP {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+// Scroll-Bar
+::-webkit-scrollbar {
+  background: #fefefe;
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-corner {
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}

@@ -1,6 +1,6 @@
 <h1 align="center" >Notebook</h1>
 
-![Front](./assets/covers/front.png)
+![Front](./assets/docs/front.png)
 
 The project is about a website where I can store and display my notes in an easy and simple way. Note files are in markdown and markdown-react format
 
@@ -8,29 +8,23 @@ The project is about a website where I can store and display my notes in an easy
 
 # View Proyect
 
-#### Light
-
-![Capture1º](./assets/covers/CaptureLight5.png)
+![Capture1º](./assets/docs/Capture.png)
 
 ---
 
-![Capture2º](./assets/covers/CaptureLight1.png)
+![Capture2º](./assets/docs/Capture2.png)
 
 ---
 
-![Capture3º](./assets/covers/CaptureLight3.png)
-
-#### Dark
-
-![Capture1º](./assets/covers/CaptureDark5.png)
+![Capture3º](./assets/docs/Capture3.png)
 
 ---
 
-![Capture2º](./assets/covers/CaptureDark1.png)
+![Capture1º](./assets/docs/Capture4.png)
 
 ---
 
-![Capture3º](./assets/covers/CaptureDark3.png)
+![Capture2º](./assets/docs/Capture5.png)
 
 # Technologies
 

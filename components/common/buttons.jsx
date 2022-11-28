@@ -1,14 +1,23 @@
 import { useEffect } from "react";
-import { ChevronUpIcon } from "@chakra-ui/icons";
-import { Burguer } from "./svg";
+import { ArrowUP } from "./svg";
 
 export function Button_Burguer({ onClick }) {
+  useEffect(() => {
+    const menu = document.querySelector(".MENU");
+    const button = document.getElementById("button-burguer");
+
+    button.addEventListener("click", () => {
+      if (menu.classList[1] === "hidden") {
+        menu.classList.remove("hidden");
+        menu.classList.add("watch");
+      }
+    });
+  }, []);
   return (
-    <button
-      className="p-2 flex justify-center items-center rounded-xl"
-      onClick={onClick}
-    >
-      <Burguer />
+    <button className="button-burguer" id="button-burguer" onClick={onClick}>
+      <div className="rect-burguer one"></div>
+      <div className="rect-burguer two"></div>
+      <div className="rect-burguer tree"></div>
     </button>
   );
 }
@@ -49,11 +58,8 @@ export function Button_UP() {
   };
 
   return (
-    <button
-      className="bg-indigo-400 p-1 rounded-full fixed right-10 bottom-8 hover:scale-110 duration-200"
-      id="button-scroll-init"
-    >
-      <ChevronUpIcon width="40px" height="40px" color="#fefefe" />
+    <button className="button-up" id="button-scroll-init">
+      <ArrowUP classN="arrow-up" />
     </button>
   );
 }

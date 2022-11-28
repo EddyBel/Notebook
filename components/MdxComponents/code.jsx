@@ -1,5 +1,4 @@
 import Highlight, { defaultProps } from "prism-react-renderer";
-// import theme from "prism-react-renderer/themes/nightOwl";
 import theme from "prism-react-renderer/themes/dracula";
 
 export function CODE(props) {
@@ -7,8 +6,6 @@ export function CODE(props) {
   let count = 0;
   let key = 0;
   let lang = "";
-
-  // console.log(props);
 
   if (
     props.className === undefined ||

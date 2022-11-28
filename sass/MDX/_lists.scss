@@ -1,0 +1,17 @@
+@import "../utils/mixin";
+
+.container-list-note {
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.item-li {
+  @include flex(row, flex-start, center, 5px);
+
+  .decoration-li {
+    background: #0d0210;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+  }
+}

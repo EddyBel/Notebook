@@ -1,0 +1,49 @@
+@import "../utils/mixin";
+
+.NOTES {
+  @include p-vertical(90px, 50px);
+
+  .container-notes {
+    @include size(95%);
+    @include min-size(auto, 100vh);
+    @include max-size(900px);
+    @include p-horizontal(10px, 10px);
+    @include p-vertical(0px, 20px);
+    margin: auto;
+
+    .Text-Error-Notes {
+      @include size(100%);
+      font-size: 60px;
+      font-weight: bold;
+      text-align: center;
+      animation: watchNote 400ms normal;
+    }
+  }
+
+  .section-notes {
+    @include p-horizontal(10px, 10px);
+    @include p-vertical(10px, 30px);
+    background: linear-gradient(to right bottom, #dfdfeb, #a7b1d4);
+    border-radius: 30px;
+    transition: all 400ms;
+    overflow: hidden;
+
+    .container-all-notes {
+      @include flex(column, flex-start, flex-start, 25px);
+      @include p-horizontal(25px, 25px);
+      @include p-vertical(25px, 20px);
+      @include max-size(auto, 87vh);
+      margin-top: 25px;
+      overflow-y: auto;
+      overflow-x: hidden;
+
+      &::-webkit-scrollbar {
+        border-radius: 12px;
+      }
+    }
+  }
+}
+
+.icon-search {
+  @include size(30px, 30px);
+}

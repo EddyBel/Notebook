@@ -1,0 +1,29 @@
+.container-matters-notes {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  @include flex(row, center, center, 10px, wrap);
+
+  .option-matter {
+    background: linear-gradient(to right bottom, #e1edd1, #9ea4c3);
+    padding: 10px;
+    border-radius: 30px;
+    min-width: 90px;
+    text-align: center;
+    font-weight: bold;
+    @include p-horizontal(20px, 20px);
+    cursor: pointer;
+    transition: all 400ms;
+
+    &.activate {
+      box-shadow: 0px 0px 0px 3px #0d0210;
+      //   background: #0d0210;
+      //   color: #fefefe;
+    }
+
+    &:hover {
+      background: #0d0210;
+      color: #fefefe;
+    }
+  }
+}

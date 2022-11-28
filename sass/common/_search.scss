@@ -1,0 +1,27 @@
+@import "../utils/mixin";
+
+.container-input {
+  @include flex(row, space-between, center, 12px);
+  @include p-horizontal(20px, 20px);
+  @include p-vertical(14px, 14px);
+  background: #0d0210;
+  width: 100%;
+  margin: auto;
+  border-radius: 30px;
+  margin-bottom: 20px;
+
+  .input-search {
+    width: 100%;
+    padding: 8px;
+    border-radius: 30px;
+    background: none;
+    // border: #1693a5 solid 1px;
+    outline: none;
+    color: #fefefe;
+    padding-left: 30px;
+  }
+
+  .icon-search {
+    fill: #f3f3ec;
+  }
+}
